@@ -1,0 +1,42 @@
+﻿
+<div id="map"></div>
+
+<script>
+    // Initialize the map
+    const map = L.map('map').setView([37.7749, -122.4194], 10); // Default center (San Francisco)
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Sample asset data (replace with dynamic data from backend)
+    const assets = [
+      {
+        name: "Transformer A",
+        lat: 37.7749,
+        lon: -122.4194,
+        type: "Electrical",
+        status: "Active"
+      },
+      {
+        name: "Water Pump B",
+        lat: 37.7949,
+        lon: -122.4394,
+        type: "Plumbing",
+        status: "Under Maintenance"
+      }
+    ];
+
+    // Function to add markers
+    function addAssetMarkers(assetList) {
+      assetList.forEach(asset => {
+        const marker = L.marker([asset.lat, asset.lon]).addTo(map);
+        marker.bindPopup(`<b>${asset.name}</b><br>Type: ${asset.type}<br>Status: ${asset.status}`);
+      });
+    }
+
+    // Load asset markers
+    addAssetMarkers(assets); </script>
+<script src="assets/js/leaflet.js"></script>
+<script src="assets/js/map.js"></script>
