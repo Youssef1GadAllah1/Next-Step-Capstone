@@ -55,11 +55,14 @@ namespace Capstone_Next_Step.Controllers
             return RedirectToAction("Employee");
         }
 
+<<<<<<< HEAD
 
         public IActionResult Map()
         {
             return View();
         }
+=======
+>>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
     }
 
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿html {
+=======
+html {
+>>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
     font-size: 14px;
 }
 
@@ -1282,6 +1286,7 @@ body {
     .content {
         margin-left: 70px;
     }
+<<<<<<< HEAD
 }
 #map {
     height: 100vh;
@@ -1336,4 +1341,6 @@ body {
 .printer {
     top: 320px;
     left: 520px;
+=======
+>>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
 }

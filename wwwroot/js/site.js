@@ -673,6 +673,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.upload-text').style.display = 'block';
     });
 });
+<<<<<<< HEAD
 // Initialize the map
 const map = L.map('map').setView([37.7749, -122.4194], 10); // Default center (San Francisco)
 
@@ -709,3 +710,5 @@ function addAssetMarkers(assetList) {
 
 // Load asset markers
 addAssetMarkers(assets);
+=======
+>>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
