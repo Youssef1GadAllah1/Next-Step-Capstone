@@ -1,4 +1,4 @@
-html {
+﻿html {
     font-size: 14px;
 }
 
@@ -1286,4 +1286,54 @@ body {
 #map {
     height: 100vh;
     width: 100%;
+}
+
+
+.map-container {
+    position: relative;
+    width: 569px;
+    height: 626px;
+    margin: auto;
+    
+    background-image: url('../image/whatsapp image 2025-05-24 at 12.19.39_b793e2df.jpg'); /* ← اسم الصورة الجديد */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.asset {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* نقاط الأصول (Positions based on image) */
+.car {
+    top: 30px;
+    left: 60px;
+}
+
+.mobile {
+    top: 90px;
+    left: 260px;
+}
+
+.laptop {
+    top: 540px;
+    left: 30px;
+}
+
+.tablet {
+    top: 540px;
+    left: 520px;
+}
+
+.printer {
+    top: 320px;
+    left: 520px;
 }
