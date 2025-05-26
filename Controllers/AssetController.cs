@@ -39,14 +39,14 @@ namespace Capstone_Next_Step.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-<<<<<<< HEAD
+
         public IActionResult Inventory()
         {
             var Inventory = _context.Products.ToList();
             return View(Inventory);
         }
-=======
->>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
+
+
       
     }
 }

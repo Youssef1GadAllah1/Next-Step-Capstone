@@ -673,42 +673,34 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.upload-text').style.display = 'block';
     });
 });
-<<<<<<< HEAD
-// Initialize the map
-const map = L.map('map').setView([37.7749, -122.4194], 10); // Default center (San Francisco)
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
 
-// Sample asset data (replace with dynamic data from backend)
-const assets = [
-    {
-        name: "Transformer A",
-        lat: 37.7749,
-        lon: -122.4194,
-        type: "Electrical",
-        status: "Active"
-    },
-    {
-        name: "Water Pump B",
-        lat: 37.7949,
-        lon: -122.4394,
-        type: "Plumbing",
-        status: "Under Maintenance"
-    }
-];
+  // مركز محافظة القاهرة
+  const cairoCenter = [30.0444, 31.2357]; 
 
-// Function to add markers
-function addAssetMarkers(assetList) {
-    assetList.forEach(asset => {
-        const marker = L.marker([asset.lat, asset.lon]).addTo(map);
-        marker.bindPopup(`<b>${asset.name}</b><br>Type: ${asset.type}<br>Status: ${asset.status}`);
-    });
-}
+  // إنشاء الخريطة
+  const map = L.map('map').setView(cairoCenter, 12); // zoom 12 يناسب المدينة
 
-// Load asset markers
-addAssetMarkers(assets);
-=======
->>>>>>> 1e548f67aaf0b7adc80e8bbb4124754e71979670
+  // إضافة طبقة خريطة OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18,
+    minZoom: 10
+  }).addTo(map);
+
+  // بيانات الأصول (الأسماء + إحداثياتهم داخل المحافظة)
+  const assets = [
+    { name: "Vehicle Fleet", coords: [30.0500, 31.2330] },
+    { name: "IT Equipment", coords: [30.0400, 31.2400] },
+    { name: "Office Supplies", coords: [30.0460, 31.2300] },
+    { name: "HR Department", coords: [30.0420, 31.2370] },
+    { name: "Maintenance Tools", coords: [30.0485, 31.2450] },
+  ];
+
+  // إضافة كل أصل كنقطة على الخريطة مع نافذة منبثقة باسم الأصل
+  assets.forEach(asset => {
+    L.marker(asset.coords).addTo(map)
+      .bindPopup(<b>${asset.name}</b>)
+      .openPopup();
+  });
+
